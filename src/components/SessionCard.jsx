@@ -26,6 +26,7 @@ export default function SessionCard({ program, session }) {
           week_label: session.week_label,
           session_date: session.session_date,
           technicians_count: session.technicians_count,
+          description: session.description,
         },
         mediaMap,
         videoUrl: mediaMap.session_video,
@@ -43,6 +44,9 @@ export default function SessionCard({ program, session }) {
           <p className="font-body text-sm text-mute">
             {session.company_name} · {session.session_date} · {session.technicians_count} technicians
           </p>
+          {session.description && (
+            <p className="font-body text-sm text-ink/80 mt-2 max-w-[60ch]">{session.description}</p>
+          )}
         </div>
         <button
           type="button"

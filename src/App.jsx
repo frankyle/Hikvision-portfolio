@@ -36,6 +36,7 @@ export default function App() {
       week_label: form.week_label,
       session_date: form.session_date,
       technicians_count: Number(form.technicians_count) || 0,
+      description: form.description || "",
     });
     setSessions((prev) => [row, ...prev]);
   }

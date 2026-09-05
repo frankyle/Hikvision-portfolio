@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SessionCard from "./SessionCard";
 
-const emptyForm = { company_name: "", week_label: "", session_date: "", technicians_count: "" };
+const emptyForm = { company_name: "", week_label: "", session_date: "", technicians_count: "", description: "" };
 
 export default function ProgramPanel({ program, sessions, onLogSession }) {
   const [open, setOpen] = useState(false);
@@ -62,6 +62,13 @@ export default function ProgramPanel({ program, sessions, onLogSession }) {
             value={form.technicians_count}
             onChange={(e) => setForm({ ...form, technicians_count: e.target.value })}
             className="focus-ring bg-panel2 border border-line px-3 py-2 text-sm text-ink placeholder:text-mute"
+          />
+          <textarea
+            placeholder="Session description — what was covered, how it went, any notes for the report"
+            value={form.description}
+            onChange={(e) => setForm({ ...form, description: e.target.value })}
+            rows={3}
+            className="focus-ring sm:col-span-4 bg-panel2 border border-line px-3 py-2 text-sm text-ink placeholder:text-mute resize-y"
           />
           <button
             type="submit"
